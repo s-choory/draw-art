@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 인터랙티브 아트 애니메이션</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <button id="darkModeToggle">🌓</button>
+    
+    <h2>그릴 공간</h2>
+    <button class="fullscreen-button" onclick="toggleFullscreen('drawContainer')">전체 화면</button>
+    <div class="canvas-container" id="drawContainer">
+        <div class="controls">
+            <div class="control-group">
+                <label for="colorPicker">색상:</label>
+                <input type="color" id="colorPicker" value="#000000">
+                
+                <label for="penSize">펜 크기:</label>
+                <input type="range" id="penSize" min="1" max="20" value="5">
+            </div>
+            <div class="control-group">
+                <button class="icon-button" onclick="usePen()"><i class="fas fa-pen"></i></button>
+                <button class="icon-button" onclick="useEraser()"><i class="fas fa-eraser"></i></button>
+                <button class="icon-button" onclick="undo()"><i class="fas fa-undo-alt"></i></button>
+                <button class="icon-button" onclick="redo()"><i class="fas fa-redo-alt"></i></button>
+                <button class="icon-button" onclick="clearCanvas()"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+        <canvas id="drawCanvas" width="800" height="600"></canvas>
+        <div class="shape-buttons">
+            <button class="shape-button" onclick="drawImage('images/shuttle.png')">셔틀</button>
+        </div>
+        <button id="confirmBtn" onclick="confirmDrawing()">애니메이션 시작</button>
+    </div>
+    
+    <h2 style="margin-top: 50px;">애니메이션 공간</h2>
+    <button class="fullscreen-button" onclick="toggleFullscreen('viewContainer')">전체 화면</button>
+    <div class="canvas-container" id="viewContainer" style="z-index: 0;">
+        <canvas id="viewCanvas" width="800" height="600"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #008CBA;
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --border-color: #ddd;
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+.dark-mode {
+    --background-color: #333;
+    --text-color: #f0f0f0;
+    --border-color: #555;
+}
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.canvas-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: all 0.3s;   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dark-mode .canvas-container {
+    background-color: #444;
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.1);
+}
+#drawCanvas {
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+#drawCanvas {
+    margin: 20px 0;
+    width: 600px; /* 새로운 크기 */
+    height: 400px; /* 새로운 크기 */
+}
+.fullscreen-container #drawCanvas {
+    width: 90vw; /* 전체 화면에서 약간 줄어듬 */
+    height: 70vh; /* 전체 화면에서 상단 버튼을 고려하여 약간의 여유를 둠 */
+}
+#viewCanvas {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.control-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+label {
+    margin-right: 10px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+input[type="color"], input[type="range"] {
+    margin-right: 15px;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+input[type="color"] {
+    cursor: pointer;
+}
+input[type="range"] {
+    width: 150px;
+    cursor: pointer;
+}
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+button:hover {
+    filter: brightness(110%);
+    transform: translateY(-2px);
+}
+button.active {
+    background-color: var(--secondary-color);
+}
+.icon-button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#confirmBtn {
+    background-color: var(--secondary-color);
+    font-size: 18px;
+    padding: 14px 22px;
+}
+.shape-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.shape-button {
+    background-color: var(--secondary-color);
+    margin: 0 5px;
+}
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.dark-mode #darkModeToggle {
+    background-color: #f0f0f0;
+    color: #333;
+}
+.shape-buttons, #confirmBtn {
+    margin-top: 15px;
+}
+.fullscreen-button {
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+.fullscreen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
